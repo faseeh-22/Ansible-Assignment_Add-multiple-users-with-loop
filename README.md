@@ -17,8 +17,9 @@ You should have SSH access to the target machine with appropriate privileges to 
 3. **Cmd:**
 vim add-users.yml
 4. and write the following contents in the file.
- 
-```---
+
+```
+---
 - name: Add multiple users to target machine
   hosts: remote_host
   become: true
@@ -35,8 +36,9 @@ vim add-users.yml
     	name: "{{ item.name }}"
     	password: "{{ item.password | password_hash('sha512') }}"  # Passwords should be hashed
     	state: present
-  	loop: "{{ users_to_add }}"```
- 
+  	loop: "{{ users_to_add }}"
+ ```
+
 5. Save the playbook file by pressing “esc” key and typing “:wq”
  
 
