@@ -15,7 +15,7 @@ You should have SSH access to the target machine with appropriate privileges to 
 1. Open a text editor or IDE of your choice.
 2. Create a new file with the extension .yml (e.g., add-users.yml)
 3. **Cmd:**
-vim add-users.yml
+`vim add-users.yml`
 4. and write the following contents in the file.
 
 ```
@@ -59,12 +59,13 @@ loop: "{{ users_to_add }}": This is the loop directive that iterates over the us
 
 1. Create an inventory file (e.g., invent.ini) and add the target machine's IP or hostname under the remote_host group.
 2. **Cmd:**
-vim invent.ini
+`vim invent.ini`
 3. Then define a group and write  ip address or hostname of the target machine.
+```
 [remote_host]
 target_machine_ip_or_hostname
 e.g  192.168.0.0.1
- 
+``` 
  
  
 ## Step 4: Run the Playbook
@@ -73,7 +74,7 @@ Open a terminal and navigate to the directory where you saved the playbook file 
  
 Now, execute the playbook using the ansible-playbook command:
  
-ansible-playbook -b  -i invent.ini add_users.yml -kK
+`ansible-playbook -b  -i invent.ini add_users.yml -kK`
  
  
  
